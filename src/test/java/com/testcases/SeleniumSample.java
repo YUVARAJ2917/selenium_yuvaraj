@@ -139,7 +139,7 @@ public class SeleniumSample {
 		element.click();
 		element = driver.findElementByName("q");
 		element.click();
-		element.sendKeys("laptop");
+		element.sendKeys("LAPTOP");
 		driver.findElementByXPath("//button[@class='L0Z3Pu']").click();
 		driver.findElementByXPath("//div[@class='_4rR01T']").click();
 
@@ -158,6 +158,23 @@ public class SeleniumSample {
 		element = driver.findElementByXPath("//button[@type='submit']");
 		element.click();
 
+	}
+
+	@Test
+
+	public static void automateApollo247() {
+		//button[contains(@class,'AphButton_primaryBtn__1pAAx')]
+		
+		driver.get(
+				"https://www.apollopharmacy.in/?variant=2&utm_source=google&utm_medium=cpc&utm_campaign=AP_Branding_Pharmacy_Chennai&gclid=CjwKCAjw5NqVBhAjEiwAeCa97etcGCl5D4ku3P3KqOwOB4x9aIGrXlCvvEN58VUVwLaPxo5XHaktgBoCXksQAvD_BwE");
+		WebElement element = driver.findElement(By.id("searchProduct"));
+		element.click();
+		element.sendKeys("dolo 650");
+		element = driver.findElementByXPath(" //i[@class='icon-ic-search MedicineAutoSearch_searchIco__2Hi4p']");
+		element.click();
+		element = driver.findElementByXPath("//button[contains(text(),'Add to Cart')]");
+		element.click();
+		
 	}
 
 	@Test
