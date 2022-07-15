@@ -60,6 +60,30 @@ public class SeleniumSample {
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}  
+
+	@Test
+	public static void automateAmazon() {
+		driver.get("https://www.amazon.in/");
+		WebElement element = driver.findElement(By.xpath("//*[@data-csa-c-content-id='nav_cs_mobiles']"));
+		element.click();
+
+		element = driver.findElement(By.id("twotabsearchtextbox"));
+		element.sendKeys("iphone");
+
+		element = driver.findElement(By.id("nav-search-submit-button"));
+		element.click();
+
+		element = driver.findElement(By.xpath("//*[@class='a-section aok-relative s-image-fixed-height']"));
+		element.click();
+
+		// driver.navigate();
+
+		element = driver.findElement(By.xpath("//*[@id='buy-now-button']"));
+		
+		element.click();
+
+		driver.close();
 	}
 
 	@Test
@@ -81,29 +105,6 @@ public class SeleniumSample {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Test
-	public static void automateAmazon() {
-		driver.get("https://www.amazon.in/");
-		WebElement element = driver.findElement(By.xpath("//*[@data-csa-c-content-id='nav_cs_mobiles']"));
-		element.click();
-
-		element = driver.findElement(By.id("twotabsearchtextbox"));
-		element.sendKeys("iphone");
-
-		element = driver.findElement(By.id("nav-search-submit-button"));
-		element.click();
-
-		element = driver.findElement(By.xpath("//*[@class='a-section aok-relative s-image-fixed-height']"));
-		element.click();
-
-		// driver.navigate();
-
-		element = driver.findElement(By.xpath("//*[@id='buy-now-button']"));
-		element.click();
-
-		driver.close();
 	}
 
 	@Test
